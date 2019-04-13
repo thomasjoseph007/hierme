@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TblCategories extends Migration
+class TblWorking extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class TblCategories extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_categories', function (Blueprint $table) {
-            $table->increments('cat_id');
-            $table->string('category')->unique();
-            $table->timestamps();
+        Schema::create('tbl_working', function (Blueprint $table) {
+            $table->bigincrements('wid');
+            $table->string('award');
+            $table->string('authority');
         });
     }
 
@@ -27,6 +27,6 @@ class TblCategories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_categories');
+        Schema::dropIfExists('tbl_working');
     }
 }

@@ -17,23 +17,25 @@ class FreelancerController extends Controller
     }
     public function index()
     {
-        $id=DB::table('users')->get();
+        $id = DB::table('users')->get();
         $category = DB::table('tbl_categories')->get();
         if (Auth::user()->pcompleted == 0) {
-            return view('freelancer.fprofile',['id' => $id],['category' => $category]);
-        } else {
+            return view('freelancer.fprofile', ['id' => $id]);
+        } else if (Auth::user()->pcompleted == 2) {
+                return view('freelancer.fdetails', ['id' => $id], ['category' => $category]);
+            } else {
             return view('freelancer.fhome');
         }
     }
     public function cat($id)
     {
-        $cat =DB::table('tbl_skills')->where("cat_id",$id)->get()->toJson();
+        $cat = DB::table('tbl_skills')->where("cat_id", $id)->get()->toJson();
         return $cat;
     }
 
     public function skillajax($id)
     {
-        $subcat = skill::where("s_id",$id)->get()->toJson();
+        $subcat = skill::where("s_id", $id)->get()->toJson();
         return $subcat;
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TblSkills extends Migration
+class TblFbasic extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class TblSkills extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_skills', function (Blueprint $table) {
-            $table->increments('s_id');
-            $table->integer('cat_id')->unsigned();
-            $table->foreign('cat_id')->references('cat_id')->on('tbl_categories');
-            $table->string('skills')->unique();
+        Schema::create('tbl_fbasic', function (Blueprint $table) {
+            $table->bigincrements('f_bid');
+            $table->biginteger('fid')->unsigned();
+            $table->foreign('fid')->references('id')->on('users');
+            $table->string('image');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class TblSkills extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_skills');
+        Schema::dropIfExists('tbl_fbasic');
     }
 }

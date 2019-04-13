@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/freelancer','FreelancerController@index');
 Route::get('/cat/{id}','FreelancerController@cat'); 
 Route::get('/subcat/ajax/{subID}','FreelancerController@skillajax');
+Route::resource('/fimage','FprofileController');
+Route::any('/fskills','FprofileController@skills');
+
 
 
 //employer

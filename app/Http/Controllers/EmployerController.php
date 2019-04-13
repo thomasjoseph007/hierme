@@ -60,7 +60,7 @@ class EmployerController extends Controller
             
             foreach($skill as $row)
             {
-                $skillSet .= $row->skills." | ";
+                $skillSet .= $row->skill." | ";
             }
 
             $d->skills = $skillSet;

@@ -13,7 +13,22 @@ class TblTask extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_task', function (Blueprint $table) {
+            $table->bigIncrements('t_id');
+            $table->biginteger('id')->unsigned();
+            $table->foreign('id')->references('id')->on('users');
+            $table->string('tname');
+            $table->string('category');
+            $table->string('skills');
+            $table->string('date');
+            $table->string('minimum');
+            $table->string('maximum');
+            $table->string('ptype');
+            $table->string('files')->nullable();
+            $table->string('description');
+            $table->string('status');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +38,6 @@ class TblTask extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_task');
     }
 }
