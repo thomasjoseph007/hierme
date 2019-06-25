@@ -57,7 +57,7 @@ class FprofileController extends Controller
             return redirect('/freelancer');
         }
         public function skills(Request $request)
-        {   $value = $request->get('langCounter');
+        {    $value = $request->get('langCounter');
             $id= $request->get('id');
             $request->merge([
             'skills' => implode(',', (array)$request->get('skills'))
@@ -87,11 +87,11 @@ class FprofileController extends Controller
                 'year' => $years,
             ]);
             $d->save();
-
+            $value1 = $request->get('langCounterX');
             $award = array();
             $authority =array();
             $year = array();
-            for($j=0;$j<=$value;$j++)
+            for($j=0;$j<=$value1;$j++)
             {
                $award[$j] = $request->get('award');
                $authority[$j] =$request->get('authority');

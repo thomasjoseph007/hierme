@@ -1,65 +1,139 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+<!-- employer_change_password.html  [XR&CO'2014], 09:17:48 GMT -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Job Hunt</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="CreativeLayers">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
+	<link rel="stylesheet" href="{{asset('css/icons.css')}}">
+	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
+	<link rel="stylesheet" href="../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	
+</head>
+<body>
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+	<div class="page-loading">
+		<img src="images/loader.gif" alt="" />
+		<span>Skip Loader</span>
+	</div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+	<div class="theme-layout" id="scrollup">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+    <header class="stick-top forsticky">
+			<div class="menu-sec">
+				<div class="container">
+					<div class="logo">
+						<a href="/" title=""><img class="hidesticky" src="{{asset('images/resource/logo.png')}}" alt="" />
+						<img class="showsticky" src="images/resource/logo10.png" alt="" /></a>
+					</div><!-- Logo -->
+					
+				</div>
+			</div>
+		</header>
+			
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+		
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+		<section class="overlape">
+			<div class="block no-padding">
+				<div data-velocity="-.1" style="background: url(images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+				<div class="container fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="inner-header">
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+		<section>
+			<div class="block no-padding">
+				<div class="container">
+					<div class="row no-gape">
+						<aside class="col-lg-3 column border-right">
+							
+						</aside>
+						<div class="col-lg-9 column">
+							<div class="padding-left">
+								<div class="manage-jobs-sec">
+									<h3>Change Password</h3>
+									<div class="change-password">
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+										<form method="POST" action="{{ route('password.update') }}" class="needs-validation" novalidate>
+											@csrf
+											<div class="row">
+												<div class="col-lg-6">
+													<span class="pf-title">Email</span>
+													<div class="pf-field">
+														<input id="email" type="email" name="email" required autofocus>
+													</div>
+													<span class="pf-title">New Password</span>
+													<div class="pf-field">
+														<input id="password" type="password" name="password" required>
+													</div>
+													<span class="pf-title">Confirm Password</span>
+													<div class="pf-field">
+														<input id="password-confirm" type="password" name="password_confirmation" required>
+													</div>
+													<button type="submit">Update</button>
+												</div>
+												<div class="col-lg-6">
+													<i class="la la-key big-icon"></i>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+		<footer>
+			<div class="bottom-line">
+				<span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
+				<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
+			</div>
+		</footer>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
+	</div>
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="{{asset('js/ajquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/jquery-1.8.0.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/skill.js')}}" type="text/javascript"></script>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="{{asset('js/modernizr.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/wow.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/slick.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/parallax.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/select-chosen.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/jquery.scrollbar.min.js')}}" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datepicker.css')}}" />
+<script src="{{asset('js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+
+</body>
+
+<!-- employer_change_password.html  [XR&CO'2014], 09:17:48 GMT -->
+</html>
+

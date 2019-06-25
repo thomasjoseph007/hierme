@@ -90,7 +90,7 @@
 					<a href="index.html" title=""><img class="hidesticky" src="images/resource/logo.png" alt="" /><img class="showsticky" src="images/resource/logo10.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btn-extars">
-					<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+					
 					<ul class="account-btns">
 						<li class="signup-popup"><a title=""><i class="la la-key"></i> Sign Up</a></li>
 						<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i>Sign In</a></li>
@@ -135,11 +135,11 @@
 								<li class="slideHome"><img src="images/resource/mslider2.jpg" alt="" /></li>
 								<li class="slideHome"><img src="images/resource/mslider1.jpg" alt="" /></li>
 							</ul>
-							<div class="job-search-sec">
+							<div class="job-search-sec1">
 								<div class="job-search">
 
 									<h3>Hire expert freelancers for any job, online</h3>
-									<h3>Millions of small businesses use <strong>hireME </strong>to turn their ideas into reality</h3>
+									<h3>Millions of small businesses use <strong>HireME </strong>to turn their ideas into reality</h3>
 
 								</div>
 							</div>
@@ -152,7 +152,9 @@
 			</div>
 		</div>
 	</section>
-
+	<section>
+		
+	</section>
 	<section id="scroll-here">
 		<div class="block">
 			<div class="container">
@@ -502,7 +504,21 @@
             @csrf
 
 			<div class="cfield">
-				<input type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+				<input type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="email" onchange="em()" oninput="this.reportValidity()"  autocomplete="on" required/>
+                            <script>
+                            	function em(){
+								var val_email=  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+								$email= document.getElementById('email').value;
+
+
+								if(!val_email.test($email)){
+									alert("Enter valid email");
+									document.getElementById('email').value='';
+									$("#emaild").focus();
+									return false;
+								}
+								}
+                            </script>
 
 					@if ($errors->has('email'))
 						<span class="invalid-feedback" role="alert">
@@ -554,7 +570,22 @@
 						
 			</div>
 			<div class="cfield">
-				<input type="text" placeholder="Name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+				<input type="text" placeholder="Name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" id='u' required onchange='Validate();' autofocus>
+                            <script>        
+								function Validate() 
+								{
+									var val = document.getElementById('u').value;
+
+									if (!val.match(/^[A-Za-z][A-Za-z" "]{2,}$/)) 
+									{
+										alert('Invalid name');
+													document.getElementById('u').value = "";
+										return false;
+									}
+
+									return true;
+								}
+							</script>
 
 					@if ($errors->has('name'))
 						<span class="invalid-feedback" role="alert">
@@ -564,8 +595,21 @@
 				<i class="la la-user"></i>
 			</div>
 			<div class="cfield">
-				<input type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+				<input type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" id="email" onchange="em()" oninput="this.reportValidity()"  autocomplete="on" required/>
+                            <script>
+                            	function em(){
+								var val_email=  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+								$email= document.getElementById('email').value;
 
+
+								if(!val_email.test($email)){
+									alert("Enter valid email");
+									document.getElementById('email').value='';
+									$("#emaild").focus();
+									return false;
+								}
+								}
+                            </script>
 				@if ($errors->has('email'))
 					<span class="invalid-feedback" role="alert">
 						<strong>{{ $errors->first('email') }}</strong>
@@ -574,8 +618,24 @@
 				<i class="la la-envelope-o"></i>
 			</div>
 			<div class="cfield">
-				<input type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+				<input type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="pass" required onchange='Validatz();'>
+                            <script>        
+								function Validatz() 
+								{
+									var val = document.getElementById('pass').value;
 
+								if (!val.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) 
+									{
+										alert('Password should contain at least one number, one lowercase, one uppercase letter and at least six characters');
+										
+											document.getElementById('pass').value = "";
+										return false;
+									}
+
+									return true;
+								}
+
+							</script>
 					@if ($errors->has('password'))
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $errors->first('password') }}</strong>
@@ -584,7 +644,24 @@
 				<i class="la la-key"></i>
 			</div>
 			<div class="cfield">
-				<input type="password" placeholder="Confirm Password" name="password_confirmation" required>
+				<input type="password" placeholder="Confirm Password" name="password_confirmation" id="cpass" required onchange='Validatcp();'>
+                    <script>        
+						function Validatcp() 
+						{
+							var val = document.getElementById('cpass').value;
+
+						if (!val.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) 
+							{
+								alert('Password should contain at least one number, one lowercase, one uppercase letter and at least six characters');
+								
+									document.getElementById('cpass').value = "";
+								return false;
+							}
+
+							return true;
+						}
+
+					</script>
 				<i class="la la-key"></i>
 			</div>
 			<button type="submit">Signup</button>

@@ -13,14 +13,15 @@
 	<meta name="author" content="CreativeLayers">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css" />
-	<link rel="stylesheet" href="css/icons.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
-	<link rel="stylesheet" type="text/css" href="css/chosen.css" />
-	<link rel="stylesheet" type="text/css" href="css/colors/colors.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
+	<link rel="stylesheet" href="{{asset('css/icons.css')}}">
+	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
+	
 <link rel="stylesheet" href="../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.2/multiple-select.min.css">	
 </head>
@@ -32,7 +33,7 @@
 	
 	<div class="responsive-header">
 		<div class="responsive-menubar">
-			<div class="res-logo"><a href="{{ url('/employer') }}" title=""><img src="images/resource/logo.png" alt="" /></a></div>
+			<div class="res-logo"><a href="{{ url('/freelancer') }}" title=""><img src="images/resource/logo.png" alt="" /></a></div>
 		</div>
 		
 	</div>
@@ -41,21 +42,13 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="{{ url('/employer') }}" title=""><img src="images/resource/logo.png" alt="" /></a>
+					<a href="{{ url('/freelancer') }}" title=""><img src="images/resource/logo.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btns-profiles-sec">
                
 					<span><img src="images/resource/profile.jpg" alt="" />  <i class="la la-angle-down"></i></span>
 				
                     <ul>
-						<li><a href="#" title=""><i class="la la-file-text"></i> Company Profile</a></li>
-						<li><a href="#" title=""><i class="la la-briefcase"></i> Manage Jobs</a></li>
-						<li><a href="#" title=""><i class="la la-line-chart"></i> Transactions</a></li>
-						<li><a href="#" title=""><i class="la la-magnet"></i> Resumes</a></li>
-						<li><a href="#" title=""><i class="la la-folder-open"></i> Packages</a></li>
-						<li><a href="#" title=""><i class="la la-leaf"></i> Post a New Job</a></li>
-						<li><a href="#" title=""><i class="la la-phone"></i> Job Alerts</a></li>
-						<li><a href="#" title=""><i class="la la-key"></i> Change Password</a></li>
 						<li><a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -89,73 +82,48 @@
     <section>
 		<div class="block no-padding">
 			<div class="container">
-				 <div class="row no-gape">
+				 <div class="row no-gape py-5">
 				 	<aside class="col-lg-3 column border-right">
 				 		<div class="widget">
 				 			<div class="tree_widget-sec">
 				 				<ul>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-file-text"></i>Company Profile</a>
-				 						<ul>
-				 							<ol><a href="#" title="">My Profile</a></ol>
-				 							<ol><a href="#" title="">Social Network</a></ol>
-				 							<ol><a href="#" title="">Contact Information</a></ol>
-				 						</ul>
-				 					</li>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-briefcase"></i>Manage Jobs</a>
-				 						<ul>
-				 							<li><a href="#" title="">My Profile</a></li>
-				 							<li><a href="#" title="">Social Network</a></li>
-				 							<li><a href="#" title="">Contact Information</a></li>
-				 						</ul>
-				 					</li>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-money"></i>Transactions</a>
-				 						<ul>
-				 							<li><a href="#" title="">My Profile</a></li>
-				 							<li><a href="#" title="">Social Network</a></li>
-				 							<li><a href="#" title="">Contact Information</a></li>
-				 						</ul>
-				 					</li>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-paper-plane"></i>Resumes</a>
-				 						<ul>
-				 							<li><a href="#" title="">My Profile</a></li>
-				 							<li><a href="#" title="">Social Network</a></li>
-				 							<li><a href="#" title="">Contact Information</a></li>
-				 						</ul>
-				 					</li>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-user"></i>Packages</a>
-				 						<ul>
-				 							<li><a href="#" title="">My Profile</a></li>
-				 							<li><a href="#" title="">Social Network</a></li>
-				 							<li><a href="#" title="">Contact Information</a></li>
-				 						</ul>
-				 					</li>
+								 <li class="inner-child">
+											<a href="#" title=""><i class="la la-home"></i>Home</a>
+											<ul>
+												<ol><a href="/freelancer" title="">Home</a></ol>
+												
+											</ul>
+										</li>
+								 <li class="inner-child">
+										<a href="#" title=""><i class="la la-file-text"></i>Post Your Skills</a>
+										<ul>
+										<a href="/post" title=""><li>Post Your Works</li></a>
+											<a href="/mpost"><li> Your Posts</</a>									
+										</ul>
+									</li>
+									<li class="inner-child">
+										<a href="#" title=""><i class="la la-briefcase"></i>Manage Bids</a>
+										<ul>
+										<a href="/applied" title=""><li>Applied Bids</li></a>
+										<a href="/approvedbids" title=""><li>Acepted Bids</li></a>
+										
+										</ul>
+									</li>
+				 				
 				 					<li class="inner-child">
 				 						<a href="#" title=""><i class="la la-file-text"></i>TASK</a>
 				 						<ul>
                                         	<a href="/ptask"><li>Post Task</li></a>
 				 							<a href="/managetask" title=""><li>Manage Task</li></a>
-				 							<a href="#" title="">Contact Information</a>
+				 							
 				 						</ul>
 				 					</li>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-flash"></i>Job Alerts</a>
-				 						<ul>
-				 							<li><a href="#" title="">My Profile</a></li>
-				 							<li><a href="#" title="">Social Network</a></li>
-				 							<li><a href="#" title="">Contact Information</a></li>
-				 						</ul>
-				 					</li>
+				 					
 				 					<li class="inner-child"> 
 				 						<a href="#" title=""><i class="la la-lock"></i>Change Password</a>
 				 						<ul>
-				 							<li><a href="#" title="">My Profile</a></li>
-				 							<li><a href="#" title="">Social Network</a></li>
-				 							<li><a href="#" title="">Contact Information</a></li>
+				 							
+				 							
 				 						</ul>
 				 					</li> 
 				 					<li><a href="{{ route('logout') }}"
@@ -169,15 +137,15 @@
 				 				</ul>
 				 			</div>
 				 		</div>
-				 	</aside>
+						 </aside>
                     
-                     
+                        @yield('content')
                     
 				 </div>
 			</div>
 		</div>
 	</section>
-	@yield('content')
+	
     <footer>
         <div class="bottom-line">
 			<span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
@@ -189,6 +157,7 @@
 <script src="{{ asset('js/ajquery.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/jquery-1.8.0.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/skill.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/modal.js')}}" type="text/javascript"></script>
 
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="{{ asset('js/modernizr.js')}}" type="text/javascript"></script>
@@ -208,6 +177,14 @@
 			    format: 'dd-mm-yyyy'
 			});
 		});
+function preview_image(event) {
+			var reader = new FileReader();
+			reader.onload = function() {
+				var output = document.getElementById('uploadbox');
+				output.src = reader.result;
+			}
+			reader.readAsDataURL(event.target.files[0]);
+		}
 </script>
 
 

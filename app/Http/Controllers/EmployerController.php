@@ -44,14 +44,16 @@ class EmployerController extends Controller
     }
     public function managetask()
     {
-        $datas=DB::table('tbl_task')->get();
+        
+        $eid=Auth::user()->id;
+        $datas=Db::table('tbl_task')->where('id',$eid)->get();
         $sk=array();
         $skil=[];
 
         foreach($datas as $d) 
         {
             $skillSet = "";
-            $s=$d->skills;
+            $s=$d->tskills;
             $str_arr = explode (",", $s);
          for($i=0;$i<count($str_arr);$i++)
          {
@@ -66,15 +68,13 @@ class EmployerController extends Controller
             $d->skills = $skillSet;
          } 
            
-        }
-       
-   
-           
+        }     
         return view('employer.manage_task')->with(compact('datas'));
     }
     public function blocktask($id)
     {   
-        $task = DB::table('tbl_task')->where('t_id',$id)->get();
+         $eid=Auth::user()->id;
+        $task = DB::table('tbl_task')->where('id',$eid)->get();
         
         foreach ($task as $a) {
             if ($a->status== 'Active') {

@@ -32,26 +32,17 @@ class TaskController extends Controller
             'id' => $request->get('id'),
             'tname' => $request->get('tname'),
             'category' => $request->get('category'),
-            'skills'=>$request->get('skills'),
+            'tskills'=>$request->get('skills'),
             'date' => $request->get('date'),
             'minimum' => $request->get('minimum'),
             'maximum' => $request->get('maximum'),
             'ptype' => $request->get('ptype'),
-            'files' => $Proof1_name,
-            'description' => $request->get('description'),
+            'tfiles' => $Proof1_name,
+            'tdescription' => $request->get('description'),
             'status' => 'Active'
         ]);
 
         $a->save();
-    
-        /* $tags = explode(',', $request->get('skills'));
-        foreach ($tags as $tag) {
-            Tskill::create([
-                'tid' => $a->t_id,
-                'uid' => $a->id,
-                'skill' => $tag
-            ]); 
-        }*/
          return redirect('/ptask');
     }
 }

@@ -22,52 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<style>
-		div#slider article {
-			background: white;
-			padding: 30px;
-			float: left;
-			margin-top: 20px;
-			width: 100%;
-		}
-
-		a.next {
-			background: #f36b06;
-			display: block;
-			width: 300px;
-			float: left;
-			margin: 10px 0 0 164px;
-			text-align: center;
-			clear: left;
-			padding: 7px 13px;
-			border-radius: 4px;
-			-moz-border-radius: 4px;
-			-webkit-border-radius: 4px;
-			color: white;
-			text-decoration: none
-		}
-
-		#page {
-			float: left;
-			margin: 10px 0 0 0
-		}
-
-		#page li {
-			float: left;
-			margin: 0 5px 0 0;
-			padding: 5px 15px;
-			background: #f36b06;
-			text-align: center;
-			border-radius: 4px;
-			-moz-border-radius: 4px;
-			-webkit-border-radius: 4px;
-			color: white;
-		}
-
-		#page li a {
-			color: white;
-			text-decoration: none
-		}
-
+		
 		.select {
 			width: 100%;
 			display: inline-block;
@@ -163,9 +118,38 @@
 										<div class="row">
 
 											<div class="upload-img-bar">
-												<span><img id="output_image" /></span>
+												<span><img id="user_img"
+														height="150"
+														width="150"
+														style="border:dashed" />
+												</span>
 												<div class="upload-info">
-													<input type="file" accept="image/*" onchange="preview_image(event)" name="image">
+												<input type="file" accept="image/*" name="image" id="file"  onchange="show(this)" />
+                            					
+												<script>
+													function show(input) {
+														debugger;
+														var validExtensions = ['jpg','png','jpeg']; //array of valid extensions
+														var fileName = input.files[0].name;
+														var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+														if ($.inArray(fileNameExt, validExtensions) == -1) {
+															input.type = ''
+															input.type = 'file'
+															$('#').attr('src',"");
+															alert("Only these file types are accepted : "+validExtensions.join(', '));
+														}
+														else
+														{
+														if (input.files && input.files[0]) {
+															var filerdr = new FileReader();
+															filerdr.onload = function (e) {
+																$('#user_img').attr('src', e.target.result);
+															}
+															filerdr.readAsDataURL(input.files[0]);
+														}
+														}
+													}
+												</script>
 													<span></span>
 												</div>
 											</div>

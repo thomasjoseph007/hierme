@@ -12,14 +12,14 @@
 	<meta name="author" content="CreativeLayers">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css" />
-	<link rel="stylesheet" href="css/icons.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
-	<link rel="stylesheet" type="text/css" href="css/chosen.css" />
-	<link rel="stylesheet" type="text/css" href="css/colors/colors.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
+	<link rel="stylesheet" href="{{asset('css/icons.css')}}">
+	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/colors/colors.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 	<link rel="stylesheet" href="../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 </head>
@@ -77,73 +77,30 @@
 								<div class="tree_widget-sec">
 									<ul>
 										<li class="inner-child">
-											<a href="#" title=""><i class="la la-file-text"></i>Company Profile</a>
+											<a href="#" title=""><i class="la la-home"></i>Home</a>
 											<ul>
-												<ol><a href="#" title="">My Profile</a></ol>
-												<ol><a href="#" title="">Social Network</a></ol>
-												<ol><a href="#" title="">Contact Information</a></ol>
+												<ol><a href="/employer" title="">Home</a></ol>
+												
 											</ul>
 										</li>
+									
 										<li class="inner-child">
-											<a href="#" title=""><i class="la la-briefcase"></i>Manage Jobs</a>
+											<a href="#" title=""><i class="la la-paper-plane"></i>Bids</a>
 											<ul>
-												<li><a href="#" title="">My Profile</a></li>
-												<li><a href="#" title="">Social Network</a></li>
-												<li><a href="#" title="">Contact Information</a></li>
-											</ul>
+												<ol><a href="/bids">Bids</a></ol>
+												<ol><a href="/bidaproved">Approved Bids</a></ol>
+				 						</ul>
 										</li>
-										<li class="inner-child">
-											<a href="#" title=""><i class="la la-money"></i>Transactions</a>
-											<ul>
-												<li><a href="#" title="">My Profile</a></li>
-												<li><a href="#" title="">Social Network</a></li>
-												<li><a href="#" title="">Contact Information</a></li>
-											</ul>
-										</li>
-										<li class="inner-child">
-											<a href="#" title=""><i class="la la-paper-plane"></i>Resumes</a>
-											<ul>
-												<li><a href="#" title="">My Profile</a></li>
-												<li><a href="#" title="">Social Network</a></li>
-												<li><a href="#" title="">Contact Information</a></li>
-											</ul>
-										</li>
-										<li class="inner-child">
-											<a href="#" title=""><i class="la la-user"></i>Packages</a>
-											<ul>
-												<li><a href="#" title="">My Profile</a></li>
-												<li><a href="#" title="">Social Network</a></li>
-												<li><a href="#" title="">Contact Information</a></li>
-											</ul>
-										</li>
+										
 										<li class="inner-child">
 											<a href="#" title=""><i class="la la-file-text"></i>TASK</a>
-											<ul>
-												<a href="/ptask">
-													<li>Post Task</li>
-												</a>
-												<a href="/managetask" title="">
-													<li>Manage Task</li>
-												</a>
-												<a href="#" title="">Contact Information</a>
-											</ul>
+										<ul>
+                                        	<ol><a href="/ptask">Post Task</a></ol>
+				 							<ol><a href="/managetask" title="">Manage Task</a></ol>
+				 						</ul>
 										</li>
-										<li class="inner-child">
-											<a href="#" title=""><i class="la la-flash"></i>Job Alerts</a>
-											<ul>
-												<li><a href="#" title="">My Profile</a></li>
-												<li><a href="#" title="">Social Network</a></li>
-												<li><a href="#" title="">Contact Information</a></li>
-											</ul>
-										</li>
-										<li class="inner-child">
-											<a href="#" title=""><i class="la la-lock"></i>Change Password</a>
-											<ul>
-												<li><a href="#" title="">My Profile</a></li>
-												<li><a href="#" title="">Social Network</a></li>
-												<li><a href="#" title="">Contact Information</a></li>
-											</ul>
-										</li>
+										
+										
 										<li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 												<i class="la la-unlink"></i>Logout</a></li>
@@ -164,50 +121,43 @@
 										<div class="row no-gape">
 											<div class="col-lg-4 col-md-4 col-sm-12">
 												<div class="p-category">
-													<a href="#" title="">
+													<a href="/ptask" title="">
 														<i class="la la-briefcase"></i>
 														<span>Create Task</span>
-														<p>14 Applications</p>
+														<p>.</p>
 													</a>
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="p-category view-resume-list">
-													<a href="#" title="">
+												<div class="p-category ">
+													<a href="/bids" title="">
 														<i class="la la-eye"></i>
-														<span>View Task</span>
-														<p>22 View Statistic</p>
+														<span>View Bids</span>
+														<p>.</p>
 													</a>
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-4 col-sm-12">
-											<div class="p-category">
-													<a href="#" title="">
-														<i class="la la-file"></i>
-														<span>My Profile</span>
-														<p>View Profile</p>
-													</a>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 									<div class="cat-sec">
 										<div class="row no-gape">
 											<div class="col-lg-4 col-md-4 col-sm-12">
 												<div class="p-category">
-													<a href="#" title="">
-														<i class="la la-check"></i>
-														<span>Appropriate For Me</span>
+													<a href="/managetask" title="">
+														<i class="la la-pencil"></i>
+														<span>managetask</span>
 													
 													</a>
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="p-category follow-companies-popup">
-													<a href="#" title="">
-														<i class="la la-user"></i>
-														<span>Follow Freelancers</span>
-														<p>++freelancers</p>
+												<div class="p-category ">
+													<a href="/bidaproved" title="">
+														<i class="la la-eye"></i>
+														<span>Approved/ Waiting bids</span>
+
 													</a>
 												</div>
 											</div>
@@ -309,16 +259,30 @@
 
 
 
-	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/modernizr.js" type="text/javascript"></script>
-	<script src="js/script.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/slick.min.js" type="text/javascript"></script>
-	<script src="js/parallax.js" type="text/javascript"></script>
-	<script src="js/select-chosen.js" type="text/javascript"></script>
-	<script src="js/jquery.scrollbar.min.js" type="text/javascript"></script>
+	<script src="{{asset('js/ajquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/jquery-1.8.0.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/skill.js')}}" type="text/javascript"></script>
+
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="{{asset('js/modernizr.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/wow.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/slick.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/parallax.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/select-chosen.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/jquery.scrollbar.min.js')}}" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datepicker.css')}}" />
+<script src="{{asset('js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+<script>
+		$(function(){
+			$('.datepicker').datepicker({
+			    format: 'dd-mm-yyyy'
+			});
+		});
+</script>
+
 
 </body>
 

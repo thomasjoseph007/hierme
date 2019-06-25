@@ -9,6 +9,6 @@ class Tk extends Model
     protected $table="tbl_task";
     protected $primaryKey="t_id";
     protected $fillable = [
-    'id','tname','category','skills','date','minimum','maximum','ptype','files','description','status' 
+    'id','tname','category','tskills','date','minimum','maximum','ptype','tfiles','tdescription','status' 
     ];
 }

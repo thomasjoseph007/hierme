@@ -2,7 +2,8 @@
 @section('content')
 
 <div class="col-lg-9 column">
-
+	
+<input type="text"  name="id" hidden="hideen" value="{{Auth::user()->id}}">
 				 		<div class="padding-left">
 					 		<div class="manage-jobs-sec">
 							
@@ -44,9 +45,13 @@
 						 					</td>
 						 					<td>
 						 						<ul class="action_job">
-						 							
-						 							<li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-						 							<li><span>Block/Unblock</span><a href="/blocktask/{{$d->t_id}}" title=""><i class="la la-trash-o"></i></a></li>
+					
+													 
+													 @if($d->status=='Active')
+													 <li><span>Block</span><a href="/blocktask/{{$d->t_id}}" title=""><i class="la la-ban"></i></a></li>
+													@else
+													 <li><span>unblock</span><a href="/blocktask/{{$d->t_id}}" title=""><i class="la la-unlock"></i></a></li>
+													 @endif
 						 						</ul>
 						 					</td>
 										

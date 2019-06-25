@@ -50,14 +50,8 @@ class LoginController extends Controller
 
         return array_add($credentials, 'status', '1');
     }
-    public function redirectTo()
-    {
-        if (Auth::user()->utype == 'admin') {
-            return '/admin';
-        } else if (Auth::user()->utype == "freelancer") {
-            return '/freelancer';
-        } else if (Auth::user()->utype == "employer") {
-            return '/employer';
-        }
-    }
+    // public function redirectTo()
+    // {
+        
+    // }
 }

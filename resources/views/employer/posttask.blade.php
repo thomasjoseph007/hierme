@@ -73,9 +73,9 @@
 						</div>									
 						<div class="col-lg-6">
 							<span class="pf-title">Project Type</span>
-							<input type="radio" name="ptype" id="232"  value="fprice" {{ (old('type') == 'fprice') ? 'checked' : '' }} checked/>
+							<input type="radio" name="ptype" id="232"  value="fixed price" {{ (old('type') == 'fprice') ? 'checked' : '' }} checked/>
 							<label for="232">Fixed Price Project</label>					
-							<input type="radio" name="ptype" id="wwqe" value="hprice" {{ (old('type') == 'hprice') ? 'checked' : '' }}/>
+							<input type="radio" name="ptype" id="wwqe" value="hourly price" {{ (old('type') == 'hprice') ? 'checked' : '' }}/>
 							<label for="wwqe">Hourly Price Project</label>												
 							@if ($errors->has('ptype'))
 							<span class="help-block">

@@ -7,6 +7,7 @@ function cat(){
             type: "GET",
             dataType: "json",
             success:function(data) {
+                console.log(data);
                 $('.skill').empty();
                 $.each(data, function(key, value) {
                     $('.skill').append('<p class="flchek"><input type="checkbox" name="skills[]" id="'+value.s_id+'" value="'+value.s_id+'"><label for="'+value.s_id+'">'+value.skill+'</label></p>');
